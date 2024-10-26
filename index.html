@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="landing-page.png" type="image/x-icon">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const items = document.querySelectorAll('.carousel .list .item');
+            const thumbnails = document.querySelectorAll('.thumbnail .item');
+            let currentIndex = 0;
+            const slideInterval = 3000; // Change slide every 3 seconds
+
+            function showItem(index) {
+                items.forEach((item, i) => {
+                    item.style.display = i === index ? 'block' : 'none';
+                });
+                currentIndex = index;
+            }
+
+            // Initialize the first item to be shown
+            showItem(currentIndex);
+
+            // Add click event to thumbnails
+            thumbnails.forEach((thumbnail, index) => {
+                thumbnail.addEventListener('click', function () {
+                    showItem(index);
+                    resetAutoSlide(); // Reset auto slide on thumbnail click
+                });
+            });
+
+            // Add click event to the carousel items themselves
+            items.forEach((item, index) => {
+                item.addEventListener('click', function () {
+                    currentIndex = (currentIndex + 1) % items.length;
+                    showItem(currentIndex);
+                    resetAutoSlide(); // Reset auto slide on item click
+                });
+            });
+
+            // Auto slide function
+            let autoSlideInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % items.length;
+                showItem(currentIndex);
+            }, slideInterval);
+
+            // Function to reset the auto slide timer
+            function resetAutoSlide() {
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = setInterval(() => {
+                    currentIndex = (currentIndex + 1) % items.length;
+                    showItem(currentIndex);
+                }, slideInterval);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <img class="nav-radius" src="travel_car_BMV_1741.png" alt="Logo">
+        <nav>
+            <a style="margin-left: 40px;" class="nav-a" href="">Home</a>
+            <a class="nav-a" href="">Contacts</a>
+            <a class="nav-a" href="">Info</a>
+            <a class="nav-a" href="">Gallery</a>
+            <a class="nav-a" href="">Services</a>
+        </nav>
+    </header>
+
+    <!-- carousel -->
+    <div class="carousel">
+        <!-- list item -->
+        <div class="list">
+            <div class="item">
+                <img src="Image1.jpg" alt="Car">
+                <div class="content">
+                    <div class="author">Pirlin Kumar</div>
+                    <div class="title">Sports Car</div>
+                    <div class="topic">Images</div>
+                    <div class="des">
+                        <!-- lorem 50 -->
+                        Nismo, the motorsport division of Nissan, participated with the GT-R Nismo GT500 in the Super GT
+                        series for the first time in 2008, replacing the 350Z GT.[5] The GT500 version of the car
+                        featured a completely different drivetrain compared to the production car. It featured the
+                        VK45DE 4.5-litre naturally aspirated V8 engine, replacing the VR38DETT engine.[6] It used a
+                        6-speed sequential manual gearbox and a rear-wheel-drive layout derived from its predecessor.
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="Image2.jpeg" alt="Car">
+                <div class="content">
+                    <div class="author">Pirlin Kumar</div>
+                    <div class="title">Sports Car</div>
+                    <div class="topic">images</div>
+                    <div class="des">
+                        The Rimac Nevera is a game-changer in the world of hypercars, blending cutting-edge technology
+                        with jaw-dropping performance. With a staggering 0-100 km/h acceleration in just 1.8 seconds, it
+                        features advanced AI assistance, split-personality cockpit customization, and a unique H-shaped
+                        battery design. Its lightweight carbon fiber construction, active aerodynamics, and Brembo
+                        carbon-ceramic brakes ensure both extreme speed and safety. This marvel of engineering isn't
+                        just a car; it's a leap into the future of automotive innovation.
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image3.jpg" alt="Car">
+                <div class="content">
+                    <div class="author">Pirlin Kumar</div>
+                    <div class="title">Sports Car</div>
+                    <div class="topic">Images</div>
+                    <div class="des">
+                        The Chevrolet Corvette is an icon in the automotive world, blending power, speed, and precision.
+                        Boasting a naturally aspirated V8 engine with up to 495 horsepower, this mid-engine marvel
+                        rockets from 0 to 60 mph in just 2.9 seconds. Its customizable cockpit, featuring genuine
+                        leather seats and advanced technology, complements the power-retractable roof for an elevated
+                        driving experience. The redesigned Z51 spoiler and multiple wheel options enhance both
+                        performance and style, while the Z06 model takes track readiness to a new level with its 5.5L V8
+                        engine and racing-inspired features. The Corvette isn't just a car.
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image4.jpg" alt="Car">
+                <div class="content">
+                    <div class="author">Pirlin Kumar</div>
+                    <div class="title">Sports Car</div>
+                    <div class="topic">Images</div>
+                    <div class="des">
+                        The Aston Martin Valiant is a track-focused, road-legal masterpiece, born from a collaboration
+                        with
+                        Formula One driver Fernando Alonso1
+                        . Powered by a 5.2-liter twin-turbocharged V12 engine, it delivers an exhilarating 745 PS and
+                        features a
+                        six-speed manual transmission2
+                        . The Valiant boasts race-bred dampers, magnesium wheels, carbon-fiber aero covers, and a quad
+                        titanium
+                        exhaust1
+                        . Its aggressive design, inspired by 70s race cars, includes a front splitter and rear wing for
+                        enhanced
+                        downforce1.
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="Image5.jpeg" alt="Car">
+                <div class="content">
+                    <div class="author">Pirlin Kumar</div>
+                    <div class="title">Sports Car</div>
+                    <div class="topic">Images</div>
+                    <div class="des">
+                        <!-- lorem 50 -->
+                        The Peugeot 9X8 is a cutting-edge hypercar designed for the Le Mans Hypercar category in the FIA
+                        World
+                        Endurance Championship1. It features a powerful 2.6-liter V6 twin-turbo engine paired with a 272
+                        hp
+                        electric motor, delivering
+                        a combined 680 hp1. The 9X8 boasts a 7-speed sequential manual transmission and all-wheel drive,
+                        ensuring exceptional
+                        performance1.Its innovative aerodynamic design, high-density 900-volt battery.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- list thumnail -->
+        <div class="thumbnail">
+            <div class="item">
+                <img src="Image1.jpg" alt="Car">
+                <div class="content">
+                    <div class="title">
+                        Nissan GT-R Nismo
+                    </div>
+                    <div class="description">
+                        Description
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="Image2.jpeg" alt="Car">
+                <div class="content">
+                    <div class="title">
+                        Rimac Nevera
+                    </div>
+                    <div class="description">
+                        Description
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image3.jpg" alt="Car">
+                <div class="content">
+                    <div class="title">
+                        Chevrolet Corvette
+                    </div>
+                    <div class="description">
+                        Description
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image4.jpg" alt="Car">
+                <div class="content">
+                    <div class="title">
+                        Aston Martin Valiant
+                    </div>
+                    <div class="description">
+                        Description
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="Image5.jpeg" alt="Car">
+                <div class="content">
+                    <div class="title">
+                        Peugeot 9X8
+                    </div>
+                    <div class="description">
+                        Description
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- time running -->
+        <div class="time"></div>
+    </div>
+    <div class="wrapper">
+        <img class="img1" src="Image1.jpg" alt="Car">
+        <div class="text-box">
+            <h1>Nissan GT-R Nismo</h1>
+            <p> Nismo, the motorsport division of Nissan, participated with the GT-R Nismo GT500 in the Super GT series
+                for the first time in 2008, replacing the 350Z GT. The GT500 version of the car featured a completely
+                different drivetrain compared to the production car. It featured the VK45DE 4.5-litre naturally
+                aspirated V8 engine, replacing the VR38DETT engine. It used a 6-speed sequential manual gearbox and a
+                rear-wheel-drive layout derived from its predecessor.</p>
+        </div>
+    </div>
+    <div class="wrapper2">
+        <img class="img2" src="Image2.jpeg" alt="Car">
+        <div class="text-box2">
+            <h1>Rimac Nevera</h1>
+            <p>The Rimac Nevera is a game-changer in the world of hypercars, blending cutting-edge technology with
+                jaw-dropping performance. With a staggering 0-100 km/h acceleration in just 1.8 seconds, it features
+                advanced AI assistance, split-personality cockpit customization, and a unique H-shaped battery design.
+                Its lightweight carbon fiber construction, active aerodynamics, and Brembo carbon-ceramic brakes ensure
+                both extreme speed and safety. This marvel of engineering isn't just a car; it's a leap into the future
+                of automotive innovation.</p>
+        </div>
+    </div>
+    <div class="wrapper3">
+        <img class="img3" src="image3.jpg" alt="Car">
+        <div class="text-box3">
+            <h1>Chevrolet Corvette</h1>
+            <p>
+                The Chevrolet Corvette is an icon in the automotive world, blending power, speed, and precision.
+                Boasting a naturally aspirated V8 engine with up to 495 horsepower, this mid-engine marvel rockets from
+                0 to 60 mph in just 2.9 seconds. Its customizable cockpit, featuring genuine leather seats and advanced
+                technology, complements the power-retractable roof for an elevated driving experience.
+            </p>
+        </div>
+    </div>
+    <div class="wrapper4">
+        <img class="img4" src="image4.jpg" alt="Car">
+        <div class="text-box4">
+            <h1>Aston Martin Valiant</h1>
+            <p>The Aston Martin Valiant is a track-focused, road-legal masterpiece, born from a collaboration with
+                Formula One driver Fernando Alonso1
+                . Powered by a 5.2-liter twin-turbocharged V12 engine, it delivers an exhilarating 745 PS and features a
+                six-speed manual transmission2
+                . The Valiant boasts race-bred dampers, magnesium wheels, carbon-fiber aero covers, and a quad titanium
+                exhaust1
+                . Its aggressive design, inspired by 70s race cars, includes a front splitter and rear wing for enhanced
+                downforce1.
+            </p>
+        </div>
+    </div>
+    <div class="wrapper5">
+        <img class="img5" src="Image5.jpeg" alt="Car">
+        <div class="text-box5">
+            <h1>Peugeot 9X8</h1>
+            <p>The Peugeot 9X8 is a cutting-edge hypercar designed for the Le Mans Hypercar category in the FIA World
+                Endurance Championship1. It features a powerful 2.6-liter V6 twin-turbo engine paired with a 272 hp
+                electric motor, delivering
+                a combined 680 hp1. The 9X8 boasts a 7-speed sequential manual transmission and all-wheel drive,
+                ensuring exceptional
+                performance1.Its innovative aerodynamic design, high-density 900-volt battery.</p>
+        </div>
+    </div>
+</body>
+
+</html>
